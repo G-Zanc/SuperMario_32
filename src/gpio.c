@@ -1,0 +1,43 @@
+#include "stm32f0xx.h"
+
+void enable_gpio()
+{
+    // Set GPIO pins
+    RCC->AHBENR |= RCC_AHBENR_GPIOBEN | RCC_AHBENR_GPIOCEN | RCC_AHBENR_GPIOAEN;
+
+    //GPIOB
+    GPIOB->MODER &= ~GPIO_MODER_MODER3; // Clear the registers
+    GPIOB->MODER &= ~GPIO_MODER_MODER4;
+    GPIOB->MODER &= ~GPIO_MODER_MODER5;
+    GPIOB->MODER &= ~GPIO_MODER_MODER2;
+    GPIOB->MODER &= ~GPIO_MODER_MODER9; // High-score clear button and set to input!
+    GPIOB->PUPDR |= GPIO_PUPDR_PUPDR9_1; // High-score pull low
+    GPIOB->MODER |= GPIO_MODER_MODER2_0; // Set PB2 to output
+    GPIOB->MODER |= GPIO_MODER_MODER3_1; // Set to alternate function
+    GPIOB->MODER |= GPIO_MODER_MODER4_1;
+    GPIOB->MODER |= GPIO_MODER_MODER5_1;
+
+    GPIOB->AFR[0] &= ~(0xf << (4*(3))); //AF0
+    GPIOB->AFR[0] &= ~(0xf << (4*(4))); //AF0
+    GPIOB->AFR[0] &= ~(0xf << (4*(5))); //AF0
+
+    //GPIOC
+    GPIOC->MODER &= ~(GPIO_MODER_MODER0 | GPIO_MODER_MODER1 | GPIO_MODER_MODER2 | GPIO_MODER_MODER3 | GPIO_MODER_MODER4 | GPIO_MODER_MODER5 | GPIO_MODER_MODER6 | GPIO_MODER_MODER7 | GPIO_MODER_MODER8 | GPIO_MODER_MODER9);
+    GPIOC->MODER |= GPIO_MODER_MODER6_0 | GPIO_MODER_MODER7_0 | GPIO_MODER_MODER8_0;
+    GPIOC->PUPDR |= GPIO_PUPDR_PUPDR0_1 | GPIO_PUPDR_PUPDR1_1 | GPIO_PUPDR_PUPDR2_1 | GPIO_PUPDR_PUPDR3_1 | GPIO_PUPDR_PUPDR4_1 | GPIO_PUPDR_PUPDR5_1;
+}
+
+void initDMA(void) {
+    RCC->AHBENR |= RCC_AHBENR_DMA1EN;
+    DMA1_Channel5 -> CCR = 0;
+    DMA1_Channel5 -> CCR &= ~DMA_CCR_EN;
+    DMA1_Channel5 -> CCR |= DMA_CCR_MINC;
+    DMA1_Channel5 -> CCR |= DMA_CCR_PSIZE_0;
+    DMA1_Channel5 -> CCR |= DMA_CCR_DIR;
+    DMA1_Channel5 -> CCR |= DMA_CCR_MSIZE_0;
+    DMA1_Channel5 -> CCR |= DMA_CCR_TCIE;
+    DMA1_Channel5 -> CPAR = &SPI2->DR;
+    DMA1_Channel5 -> CNDTR = 257;
+    NVIC->ISER[0] |= 1 << DMA1_Channel4_5_IRQn;
+
+}

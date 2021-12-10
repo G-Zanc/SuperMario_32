@@ -404,8 +404,13 @@ int main(void)
                 }
             }
 
+
             fPlayerPosX = fNewPlayerPosX;
             fPlayerPosY = fNewPlayerPosY;
+
+            if(fPlayerPosX <= 0) {
+                fPlayerPosX = 0;
+            }
 
             fCameraPosX = fPlayerPosX;
             fCameraPosY = fPlayerPosY;

@@ -25,6 +25,11 @@ https://user-images.githubusercontent.com/61773460/146092529-6428ab64-96f6-4597-
 https://user-images.githubusercontent.com/61773460/146092525-8fecac89-07fa-46b8-bad7-54b007eadc69.mov
 
 
+320x240 Resolution (Full Screen)
+
+
+
+https://user-images.githubusercontent.com/61773460/146092847-fbca078f-3f83-41d4-88f3-8c7db691b7f3.mp4
 
 
 

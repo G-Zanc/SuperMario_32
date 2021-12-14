@@ -11,4 +11,6 @@ A C implementation of Super Mario Bros for the NES using the STM32F091RCT6 chip.
 
 # Video
 
+
 # Usage
+This project System Workbench to flash and debug the STM32F091RCT6 and as such this project can be droppped into a System Workbench workspace to run on any F091RCT6 chip.

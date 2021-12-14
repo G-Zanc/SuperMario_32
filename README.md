@@ -9,6 +9,6 @@ A C implementation of Super Mario Bros for the NES using the STM32F091RCT6 chip.
 * DMA SPI Communication with buffer swapping
 * Midi sound output using DAC and timers (significant performance decrease)
 
-#Video
+# Video
 
 # Usage

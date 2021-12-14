@@ -10,9 +10,15 @@ A C implementation of Super Mario Bros for the NES using the STM32F091RCT6 chip.
 * Midi sound output using DAC and timers (significant performance decrease)
 
 # Video
-128x320 Resolution
+320x128 Resolution
 
 https://user-images.githubusercontent.com/61773460/146091651-dc093606-52f0-42df-a64e-7474da025505.mp4
+
+160x128 Resolution
+
+
+https://user-images.githubusercontent.com/61773460/146092201-2b70cdb3-aced-4f01-9e4c-67000f5abc5e.mov
+
 
 
 

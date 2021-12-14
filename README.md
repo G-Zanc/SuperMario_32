@@ -12,12 +12,18 @@ A C implementation of Super Mario Bros for the NES using the STM32F091RCT6 chip.
 # Video
 320x128 Resolution
 
-https://user-images.githubusercontent.com/61773460/146091651-dc093606-52f0-42df-a64e-7474da025505.mp4
+
+
+https://user-images.githubusercontent.com/61773460/146092529-6428ab64-96f6-4597-b58a-779865011896.mp4
+
+
 
 160x128 Resolution
 
 
-https://user-images.githubusercontent.com/61773460/146092201-2b70cdb3-aced-4f01-9e4c-67000f5abc5e.mov
+
+https://user-images.githubusercontent.com/61773460/146092525-8fecac89-07fa-46b8-bad7-54b007eadc69.mov
+
 
 
 
